@@ -1,4 +1,11 @@
-<h1>
-  {{title}}
-</h1>
 <trm-contacts-header></trm-contacts-header>
+<ul class="collection">
+  <li class="collection-item avatar">
+    <img [src]="contact.image" alt="" class="circle">
+    <!--img src="{{contact.image}}" alt="" class="test"-->
+    <!-- [] tells Angular it's an expression, so if you want a string there,
+    use '' or don't use brackets
+    You can also use src without the brackets and use curly braces in the attribute -->
+    <span class="title">{{contact.name}}</span>
+  </li>
+</ul>

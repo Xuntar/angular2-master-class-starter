@@ -11,7 +11,7 @@ export interface Contact {
   email: string;
   phone: string;
   birthday: string;
-  website: string;
+  website?: string;
   image: string;
   address: Address;
 }

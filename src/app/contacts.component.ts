@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+// Every component has a view
 @Component({
   selector: 'trm-contacts-app',
   templateUrl: 'contacts.component.html',

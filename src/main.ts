@@ -9,4 +9,13 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(ContactsModule);
+platformBrowserDynamic().bootstrapModule(ContactsModule); // Creates the platform and runs the bootstrapModule
+
+/*
+  Bootstrapping an Angular application
+  1. Upgrade located DOM element into Angular component
+  2. Create injector for the application
+  3. Create (emulated) Shadow DOM on component host element
+  4. Instantiates specified component
+  5. Perform change detection
+*/

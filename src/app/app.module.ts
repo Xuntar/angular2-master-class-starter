@@ -8,13 +8,15 @@ import { ContactsService } from './contacts.service';
 import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { RouterModule } from '@angular/router';
 import { ContactsAppRoutes } from './app.routes';
+import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
 
 // You need one root module always to bootstrap your application
 @NgModule({
   declarations: [
     ContactsAppComponent,
     ContactsHeaderComponent,
-    ContactsListComponent
+    ContactsListComponent,
+    ContactsDetailComponent
     ], // You can declare multiple components
   imports: [
     BrowserModule,

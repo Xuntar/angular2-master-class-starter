@@ -1,11 +1,15 @@
 <ul class="collection">
   <!-- https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ngFor -->
   <li *ngFor="let contact of contacts; trackBy:trackByContactId" class="collection-item avatar">
-    <img [src]="contact.image" alt="" class="circle">
-    <!--img src="{{contact.image}}" alt="" class="test"-->
-    <!-- [] tells Angular it's an expression, so if you want a string there,
-    use '' or don't use brackets
-    You can also use src without the brackets and use curly braces in the attribute -->
-    <span class="title">{{contact.name}}</span>
+    <a [routerLink]="['/contact', contact.id]">
+      <!-- routerLink is a directive, and [routerLink] binds to a property. since they have the same name, it just has to be defined once
+      leading slash means 'absolute link' (from root)--> 
+      <img [src]="contact.image" alt="" class="circle">
+      <!--img src="{{contact.image}}" alt="" class="test"-->
+      <!-- [] tells Angular it's an expression, so if you want a string there,
+      use '' or don't use brackets
+      You can also use src without the brackets and use curly braces in the attribute -->
+      <span class="title">{{contact.name}}</span>
+    </a>
   </li>
 </ul>

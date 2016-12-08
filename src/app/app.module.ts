@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser'; // Needed to be able 
 import { NgModule } from '@angular/core';
 // Every component needs to be part of at least one NgModule
 import { ContactsAppComponent } from './contacts.component';
-import { ContactsHeaderComponent } from './contacts-header/contacts-header.component';
+import { ContactsHeaderComponent } from './contacts-header'; // this is thanks to the index.ts file that exports the component
+//import { ContactsHeaderComponent } from './contacts-header/contacts-header.component'; is also possible
 
 // You need one root module always to bootstrap your application
 @NgModule({

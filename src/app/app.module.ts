@@ -9,6 +9,8 @@ import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { RouterModule } from '@angular/router';
 import { ContactsAppRoutes } from './app.routes';
 import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
+import { HttpModule } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 // You need one root module always to bootstrap your application
 @NgModule({
@@ -20,7 +22,8 @@ import { ContactsDetailComponent } from './contacts-detail/contacts-detail.compo
     ], // You can declare multiple components
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ContactsAppRoutes)
+    RouterModule.forRoot(ContactsAppRoutes),
+    HttpModule
     ], // You add other NgModules through the import clause
   bootstrap: [ContactsAppComponent], // You need something to bootstrap your application
   providers: [{ provide: ContactsService, useClass: ContactsService }] // or shorthand  [ContactsService] or something different "UseValue: 'this will be returned'"

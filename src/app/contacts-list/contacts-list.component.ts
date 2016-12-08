@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from '../contacts.service'; // Needs to be imported to use the class in TS in the constructor (necessary for TypeScript)
 import { Contact } from '../models/contact';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'trm-contacts-list',
@@ -8,7 +9,7 @@ import { Contact } from '../models/contact';
   styleUrls: ['./contacts-list.component.css']
 })
 export class ContactsListComponent implements OnInit{
-  contacts: Contact[];
+  contacts: Observable<Contact[]>;
 
   trackByContactId(index, contact){
     //console.log('Tracking by Id: ' + contact.id)
@@ -24,7 +25,8 @@ export class ContactsListComponent implements OnInit{
   //https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html
   //https://stackoverflow.com/questions/35763730/difference-between-constructor-and-ngoninit
   ngOnInit() {
-    this.contacts = this.contactsService.getContacts();
+    this.contactsService.getContacts()
+      .subscribe(contacts => this.contacts = contacts);
     /*
     Mostly we use ngOnInit for all the initialization/deceleration and avoid stuff to work in the constructor. The constructor should only be used to initialize class members but shouldn't do actual "work".
     So You should use constructor() to setup Dependency Injection and not much else. ngOnInit() is better place to "start" - it's where/when components' bindings are resolved

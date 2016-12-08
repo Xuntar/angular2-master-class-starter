@@ -17,7 +17,9 @@ export class ContactsDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contact = this.contactsService.getContactById(this.id);
+    //this.contact = this.contactsService.getContactById(this.id);
+    this.contactsService.getContactById(this.id)
+      .subscribe(contact => this.contact = contact);
   }
 
 }

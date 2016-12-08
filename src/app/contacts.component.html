@@ -1,6 +1,7 @@
 <trm-contacts-header></trm-contacts-header>
 <ul class="collection">
-  <li class="collection-item avatar">
+  <!-- https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ngFor -->
+  <li *ngFor="let contact of contacts; trackBy:trackByContactId" class="collection-item avatar">
     <img [src]="contact.image" alt="" class="circle">
     <!--img src="{{contact.image}}" alt="" class="test"-->
     <!-- [] tells Angular it's an expression, so if you want a string there,
